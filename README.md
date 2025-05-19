@@ -12,6 +12,10 @@ A simple String Calculator implemented using Test-Driven Development (TDD) in Ru
 - Supports newline characters as delimiters (e.g. "1\n2,3").
 - Supports custom single-character delimiters defined like: `//;\n1;2`.
 - Throws an exception if negative numbers are included, listing all negatives.
+- Ignores numbers greater than 1000.
+- Supports custom delimiters of any length, e.g. `//[***]\n1***2***3`.
+- Supports multiple custom delimiters, e.g. `//[*][%]\n1*2%3`.
+- Supports multiple delimiters of any length, e.g. `//[***][%%%]\n1***2%%%3`
 
 ---
 
