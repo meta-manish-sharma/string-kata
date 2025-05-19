@@ -7,7 +7,7 @@ class StringCalculator
       delimiter = delimiter_line[-1]
     end
     numbers = numbers.gsub("\n", delimiter)
-    nums = numbers.split(delimiter).map(&:to_i)
+    nums = numbers.split(delimiter).map(&:to_i).reject { |n| n > 1000 }
 
     negatives = nums.select { |n| n < 0 }
     raise "negative numbers not allowed: #{negatives.join(',')}" if negatives.any?
