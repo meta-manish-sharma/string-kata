@@ -1,5 +1,6 @@
-require_relative './safe_math_evaluator'
-require_relative './string_parser'
+require './safe_math_evaluator'
+require './string_parser'
+require './negative_number_validator'
 class StringCalculator
   def add(numbers)
     return 0 if numbers.empty?
@@ -8,8 +9,8 @@ class StringCalculator
       SafeMathEvaluator.evaluate(num)
     end
 
-    negatives = nums.select { |n| n < 0 }
-    raise "negative numbers not allowed: #{negatives.join(',')}" if negatives.any?
+    NegativeNumberValidator.check(nums)
+
     nums.reject { |n| n > 1000 }.sum
   end
 end
